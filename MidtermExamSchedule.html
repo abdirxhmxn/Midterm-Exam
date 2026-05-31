@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Al Bayaan Institute — Midterm Schedule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --green: #14463a;
+    --green-soft: #1f5a49;
+    --gold: #b88a2e;
+    --gold-soft: #d8b566;
+    --cream: #f7f1e4;
+    --paper: #fffdf8;
+    --ink: #26251f;
+    --muted: #6f6a5c;
+    --line: #e6ddc8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Karla', sans-serif;
+    background:
+      radial-gradient(circle at 12% -10%, rgba(184,138,46,0.10), transparent 40%),
+      radial-gradient(circle at 90% 0%, rgba(20,70,58,0.08), transparent 35%),
+      var(--cream);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 24px 14px 60px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 18px 50px -28px rgba(20,70,58,0.45);
+    overflow: hidden;
+  }
+
+  /* Header */
+  header {
+    background:
+      linear-gradient(160deg, var(--green) 0%, var(--green-soft) 100%);
+    color: #f4eeda;
+    text-align: center;
+    padding: 38px 26px 30px;
+    position: relative;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+  }
+  .star { color: var(--gold-soft); font-size: 1rem; }
+  header h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.15rem;
+    margin-top: 6px;
+    opacity: 0.92;
+  }
+  .daterange {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 7px 18px;
+    border: 1px solid rgba(216,181,102,0.5);
+    border-radius: 999px;
+    font-size: 0.86rem;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  .body { padding: 26px 24px 30px; }
+
+  /* Notice */
+  .notice {
+    background: #f0ede0;
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .notice strong { color: var(--green); }
+  .notice p { font-size: 0.95rem; }
+  .notice p + p { margin-top: 6px; }
+
+  /* Sections */
+  .section { margin-bottom: 26px; }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .section-title::before {
+    content: "";
+    width: 9px; height: 9px;
+    transform: rotate(45deg);
+    background: var(--gold);
+    flex: none;
+  }
+  .section-note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0 0 12px 19px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  th {
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px 10px;
+    border-bottom: 1.5px solid var(--line);
+  }
+  td {
+    padding: 11px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  .day { font-weight: 700; color: var(--green); white-space: nowrap; }
+  .pill {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: rgba(20,70,58,0.09);
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .time { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+  .off td { color: var(--muted); font-style: italic; }
+
+  .gender-tag {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  footer {
+    text-align: center;
+    padding: 4px 24px 30px;
+  }
+  .dua {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.02rem;
+    color: var(--green);
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+  .sign { font-size: 0.92rem; color: var(--muted); }
+  .sign strong { color: var(--ink); font-weight: 700; }
+
+  .divider {
+    border: none;
+    height: 1px;
+    background: var(--line);
+    margin: 0 24px 22px;
+  }
+
+  @media (max-width: 420px) {
+    header h1 { font-size: 1.7rem; }
+    .body { padding: 22px 16px 26px; }
+    table { font-size: 0.86rem; }
+    th, td { padding-left: 7px; padding-right: 7px; }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .sheet { box-shadow: none; border: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <div class="eyebrow">Al Bayaan Institute</div>
+      <h1>Midterm <span class="star">✦</span> Examinations</h1>
+      <h2>Schedule for Parents</h2>
+      <div class="daterange">Monday, June 1 – Sunday, June 7, 2026</div>
+    </header>
+
+    <div class="body">
+      <div class="notice">
+        <p><strong>There are no regular classes during exam week.</strong></p>
+        <p>Students should come <strong>only for their scheduled exam</strong> and may go home as soon as they finish.</p>
+      </div>
+
+      <!-- Weekday -->
+      <div class="section">
+        <div class="section-title">Weekday Exams</div>
+        <div class="section-note">Qur'an &amp; Writing · exams begin 5:00 PM</div>
+        <table>
+          <thead>
+            <tr><th>Day</th><th>Students</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="day">Mon, Jun 1</td><td>Tahfiidh — Girls + Rowda, Munira, Fadilla, Nihal, Nasim, Sakeenah, Aisha Mohamed</td></tr>
+            <tr><td class="day">Tue, Jun 2</td><td>Khatm — Girls</td></tr>
+            <tr><td class="day">Wed, Jun 3</td><td>Tahfiidh — Boys</td></tr>
+            <tr><td class="day">Thu, Jun 4</td><td>Khatm — Boys</td></tr>
+            <tr class="off"><td class="day">Fri, Jun 5</td><td>No exams</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Saturday Boys -->
+      <div class="section">
+        <div class="section-title">Saturday, June 6 <span class="gender-tag">&nbsp;Boys</span></div>
+        <table>
+          <thead>
+            <tr><th>Time</th><th>Exam</th><th>Students</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="time">9:00–12:00</td><td>Tajweed Class</td><td><span class="pill">Nasri, Fathi, Abdinasir, Imran, Nuh</span></td></tr>
+            <tr><td class="time">12:30–3:30</td><td>Fiqh</td><td><span class="pill">Khatm</span></td></tr>
+            <tr><td class="time">4:00–7:00</td><td>Fiqh</td><td><span class="pill">Tahfiidh</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Saturday Prep Girls -->
+      <div class="section">
+        <div class="section-title">Saturday, June 6 <span class="gender-tag">&nbsp;Prep Girls</span></div>
+        <div class="section-note">Separate room</div>
+        <table>
+          <thead>
+            <tr><th>Time</th><th>Exam</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="time">10:00–12:00</td><td>Reading + Writing</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Sunday Girls -->
+      <div class="section">
+        <div class="section-title">Sunday, June 7 <span class="gender-tag">&nbsp;Girls</span></div>
+        <table>
+          <thead>
+            <tr><th>Time</th><th>Exam</th><th>Students</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="time">9:00–12:00</td><td>Tajweed Class</td><td><span class="pill">Fardowsa, Faiso, Iiman, Saba, Ruweyda</span></td></tr>
+            <tr><td class="time">12:30–3:30</td><td>Fiqh</td><td><span class="pill">Khatm + Prep</span></td></tr>
+            <tr><td class="time">4:00–7:00</td><td>Fiqh</td><td><span class="pill">Tahfiidh Girls</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="divider" />
+    <footer>
+      <p class="dua">May Allah grant our students success and ease,<br />and bless them with beneficial knowledge.</p>
+      <p class="sign">Jazaakumullahu khairan,<br /><strong>Abdirahman</strong> · Al Bayaan Institute</p>
+    </footer>
+  </div>
+</body>
+</html>
